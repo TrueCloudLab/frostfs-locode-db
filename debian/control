@@ -1,17 +1,17 @@
-Source: neofs-locode-db
+Source: frostfs-locode-db
 Section: misc
 Priority: optional
-Maintainer: NeoSPCC <tech@nspcc.ru>
-Build-Depends: debhelper-compat (= 13), git, devscripts, wget, neofs-cli
+Maintainer: NeoSPCC <tech@frostfs.info>
+Build-Depends: debhelper-compat (= 13), git, devscripts, wget, frost
 Standards-Version: 4.5.1
-Homepage: https://fs.neo.org/
-Vcs-Git: https://github.com/nspcc-dev/neofs-locode-db.git
-Vcs-Browser: https://github.com/nspcc-dev/neofs-locode-db
+Homepage: https://frostfs.info/
+Vcs-Git: https://github.com/TrueCloudLab/frostfs-locode-db.git
+Vcs-Browser: https://github.com/TrueCloudLab/frostfs-locode-db
 
-Package: neofs-locode-db
+Package: frostfs-locode-db
 Architecture: any
 Depends: ${misc:Depends}
-Description: Compiled UN/LOCODE database for NeoFS
- NeoFS uses UN/LOCODE in storage node attributes and storage policies.
+Description: Compiled UN/LOCODE database for FrostFS
+ Frostfs uses UN/LOCODE in storage node attributes and storage policies.
  Inner ring nodes converts UN/LOCODE into human-readable set of attributes
  such as continent, country name, etc.

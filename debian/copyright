@@ -1,9 +1,10 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: neofs-locode-db
-Upstream-Contact: tech@nspcc.ru
-Source: https://github.com/nspcc-dev/neofs-locode-db
+Upstream-Name: frostfs-locode-db
+Upstream-Contact: tech@frostfs.info
+Source: https://github.com/TrueCloudLab/frostfs-locode-db
 
 Files: *
+Copyright: 2022 TrueCloudLab (@TrueCloudLab)
 Copyright: 2018-2022 NeoSPCC (@nspcc-dev)
 
 License: CC-BY-SA-4.0

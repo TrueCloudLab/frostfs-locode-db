@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 VERSION ?= "$(shell git describe --tags --match "v*" --dirty --always --abbrev=8 2>/dev/null || cat VERSION 2>/dev/null || echo "develop")"
-NEOFSCLI ?= neofs-cli
+FROST ?= frost
 
 .PHONY: all clean version help unlocode debpackage
 
@@ -35,7 +35,7 @@ unlocode:
 	unzip -u tmp/loc221csv.zip -d in/
 
 locode_db: unlocode in/continents.geojson in/airports.dat in/countries.dat
-	$(NEOFSCLI) util locode generate \
+	$(FROST) util locode generate \
 	--airports in/airports.dat \
 	--continents in/continents.geojson \
 	--countries in/countries.dat \
@@ -66,7 +66,7 @@ clean:
 
 # Package for Debian
 debpackage:
-	dch --package neofs-locode-db \
+	dch --package frostfs-locode-db \
 		--controlmaint \
 		--newversion $(PKG_VERSION) \
 		--force-bad-version \

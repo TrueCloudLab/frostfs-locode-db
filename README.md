@@ -2,27 +2,25 @@
 <img src="./.github/logo.svg" width="500px" alt="NeoFS">
 </p>
 <p align="center">
-  UN/LOCODE database for <a href="https://fs.neo.org">NeoFS</a>
+  UN/LOCODE database for <a href="https://frostfs.info">ForstFS</a>
 </p>
 
 ---
-![GitHub release](https://img.shields.io/github/release/nspcc-dev/neofs-locode-db.svg)
-![GitHub license](https://img.shields.io/github/license/nspcc-dev/neofs-locode-db.svg?style=popout)
+![GitHub release](https://img.shields.io/github/release/TrueCloudLab/frostfs-locode-db.svg)
+![GitHub license](https://img.shields.io/github/license/TrueCloudLab/frostfs-locode-db.svg?style=popout)
 
 # Overview
 
-This repository contains instructions to generate UN/LOCODE database for NeoFS
-and raw representation of it. NeoFS uses UN/LOCODE in storage node attributes
+This repository contains instructions to generate UN/LOCODE database for FrostFS
+and raw representation of it. FrostFS uses UN/LOCODE in storage node attributes
 and storage policies. Inner ring nodes converts UN/LOCODE into human-readable
-set of attributes such as continent, country name, etc. You can find out
-more in [NeoFS Specification](https://github.com/nspcc-dev/neofs-spec).
-
+set of attributes such as continent, country name, etc.
 
 # Build
 
 ## Prerequisites
 
-- Latest [neofs-cli](https://github.com/nspcc-dev/neofs-node)
+- Latest [frost] tool(https://github.com/TrueCloudLab/frostfs-node)
 - [UN/LOCODE](https://unece.org/trade/cefact/UNLOCODE-Download)
   database in CSV format
 - [OpenFlight Airports](https://raw.githubusercontent.com/jpatokal/openflights/master/data/airports.dat)
@@ -32,7 +30,7 @@ more in [NeoFS Specification](https://github.com/nspcc-dev/neofs-spec).
 
 ## Quick start
 
-Just run `make` to generate `locode_db` file for use with NeoFS InnerRing nodes.
+Just run `make` to generate `locode_db` file for use with FrostFS InnerRing nodes.
 
 ``` shell
 $ make
@@ -47,13 +45,13 @@ First unzip file with GeoJSON continents from this repository.
 $ gunzip continents.geojson
 ```
 
-Then run neofs-cli command to generate boltDB file.
+Then run frost command to generate boltDB file.
 ```
-$ neofs-cli util locode generate --help
-generate UN/LOCODE database for NeoFS
+$ frost util locode generate --help
+generate UN/LOCODE database for FrostFS
 
 Usage:
-  neofs-cli util locode generate [flags]
+  frost util locode generate [flags]
 
 Flags:
       --airports string     Path to OpenFlights airport database (csv)
@@ -64,7 +62,7 @@ Flags:
       --out string          Target path for generated database
       --subdiv string       Path to UN/LOCODE subdivision database (csv)
 
-$ ./neofs-cli util locode generate \
+$ ./frost util locode generate \
   --airports airports.dat \
   --continents continents.geojson \
   --countries countries.dat \
@@ -75,9 +73,9 @@ $ ./neofs-cli util locode generate \
 
 **Database generation might take some time!**
 
-You can test generated database with neofs-cli.
+You can test generated database with `frost`.
 ```
-$ neofs-cli util locode info --db locode_db --locode 'RU LED'
+$ frost util locode info --db locode_db --locode 'RU LED'
 Country: Russia
 Location: Saint Petersburg (ex Leningrad)
 Continent: Europe

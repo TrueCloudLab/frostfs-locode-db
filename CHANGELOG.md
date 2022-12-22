@@ -1,5 +1,10 @@
 # Changelog
-Changelog for NeoFS LOCODE database
+Changelog for FrostFS LOCODE database
+
+## 0.3.1 - 2022-12-22
+
+### Changed
+- Rebranding to FrostFS
 
 ## 0.3.0 - 2022-10-28
 
