@@ -31,16 +31,16 @@ in/continents.geojson: $(DIRS)
 	zcat continents.geojson.gz > in/continents.geojson
 
 unlocode:
-	wget -c https://service.unece.org/trade/locode/loc221csv.zip -O tmp/loc221csv.zip
-	unzip -u tmp/loc221csv.zip -d in/
+	wget -c https://service.unece.org/trade/locode/loc222csv.zip -O tmp/loc222csv.zip
+	unzip -u tmp/loc222csv.zip -d in/
 
 locode_db: unlocode in/continents.geojson in/airports.dat in/countries.dat
 	$(FROST) util locode generate \
 	--airports in/airports.dat \
 	--continents in/continents.geojson \
 	--countries in/countries.dat \
-	--in in/2022-1\ UNLOCODE\ CodeListPart1.csv,in/2022-1\ UNLOCODE\ CodeListPart2.csv,in/2022-1\ UNLOCODE\ CodeListPart3.csv \
-	--subdiv in/2022-1\ SubdivisionCodes.csv \
+	--in in/2022-2\ UNLOCODE\ CodeListPart1.csv,in/2022-2\ UNLOCODE\ CodeListPart2.csv,in/2022-2\ UNLOCODE\ CodeListPart3.csv \
+	--subdiv in/2022-2\ SubdivisionCodes.csv \
 	--out locode_db
 	chmod 644 locode_db
 
