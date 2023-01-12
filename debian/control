@@ -2,7 +2,7 @@ Source: frostfs-locode-db
 Section: misc
 Priority: optional
 Maintainer: NeoSPCC <tech@frostfs.info>
-Build-Depends: debhelper-compat (= 13), git, devscripts, wget, frost
+Build-Depends: debhelper-compat (= 13), git, devscripts, wget, frostfs-cli
 Standards-Version: 4.5.1
 Homepage: https://frostfs.info/
 Vcs-Git: https://github.com/TrueCloudLab/frostfs-locode-db.git
