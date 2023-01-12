@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
 VERSION ?= "$(shell git describe --tags --match "v*" --dirty --always --abbrev=8 2>/dev/null || cat VERSION 2>/dev/null || echo "develop")"
-FROST ?= frost
+FROST ?= frostfs-cli
 
 .PHONY: all clean version help unlocode debpackage
 
